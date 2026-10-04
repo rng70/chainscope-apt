@@ -1,0 +1,27 @@
+Package: chainscope
+Architecture: all
+Version: 1.1.0-1
+Priority: optional
+Section: devel
+Maintainer: OpenRefactory, Inc. <tanin@openrefactory.com>
+Installed-Size: 32
+Depends: chainscope-cli (= 1.1.0-1) | chainscope-gui (= 1.1.0-1)
+Filename: pool/main/c/chainscope/chainscope_1.1.0-1_all.deb
+Size: 2056
+MD5sum: 9e5567986dddec607a24e04ee8e1e1c1
+SHA1: 9a7ef8f70e8516dca7284c3863b2329e7c5efcbd
+SHA256: d446bc7db8ae0e9a6acd9560ef80224e2a063feef72de67c260afe4a35f9c244
+SHA512: 2818ca3a5370482c8b178b0485910cb801a3317ad901e6d45aefe04497ae24b8304634951792eb8ad6bf86bc6d0b2de70608e8b72321f8db785b4f2dfba368cc
+Homepage: https://github.com/OpenRefactory-Inc/chainscope
+Description: Call-graph chain explorer for *_cg.json call graphs
+ chainscope loads per-artifact, source-level static call graphs (*_cg.json),
+ lets you pick a source and a sink function, and finds every call chain between
+ them. Chains can be stitched across several graphs through stub-to-definition
+ bridges, so a route from an application into its dependencies shows up end to
+ end. Subcommands cover reachability verdicts, chokepoints, dependency surfaces,
+ graph diffs and a JSON-spec CI gate.
+ .
+ This is a metapackage. It installs chainscope-cli (the dependency-free static
+ build) by default, and is equally satisfied by an existing chainscope-gui
+ install. Install chainscope-gui directly if you want the desktop application.
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>chainscope APT repository</title>
+<style>
+  :root { color-scheme: light dark }
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 44rem; margin: 4rem auto; padding: 0 1.25rem }
+  pre { background: #8881; padding: .9rem 1rem; border-radius: 8px; overflow-x: auto }
+  code { font-family: ui-monospace, monospace }
+  table { border-collapse: collapse; margin: 1rem 0 }
+  td, th { text-align: left; padding: .35rem 1rem .35rem 0; border-bottom: 1px solid #8883 }
+</style>
+<h1>chainscope APT repository</h1>
+<p>Call-graph chain explorer: load <code>*_cg.json</code> call graphs, pick a source
+and a sink, and see every call chain between them &mdash; within one graph or
+stitched across several.</p>
+
+<h2>Install</h2>
+<pre><code>curl -fsSL https://rng70.github.io/chainscope-apt/install.sh | sudo sh
+sudo apt install chainscope-gui   # desktop application
+sudo apt install chainscope       # or: static CLI only</code></pre>
+
+<h2>Packages</h2>
+<table>
+  <tr><th>Package</th><th>Contents</th></tr>
+  <tr><td><code>chainscope</code></td><td>metapackage &mdash; pulls in the CLI build</td></tr>
+  <tr><td><code>chainscope-cli</code></td><td>fully static build, no dependencies (servers, containers, CI)</td></tr>
+  <tr><td><code>chainscope-gui</code></td><td>build with the graphical explorer + desktop entry</td></tr>
+</table>
+<p><code>chainscope-cli</code> and <code>chainscope-gui</code> both provide
+<code>/usr/bin/chainscope</code> and are mutually exclusive &mdash; installing one
+replaces the other.</p>
+<p>Architectures: <code>amd64</code>, <code>arm64</code>, <code>armhf</code>.</p>

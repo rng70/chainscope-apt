@@ -1,0 +1,89 @@
+Package: chainscope-cli
+Architecture: amd64
+Version: 1.1.0-1
+Priority: optional
+Section: devel
+Maintainer: OpenRefactory, Inc. <tanin@openrefactory.com>
+Installed-Size: 2780
+Provides: chainscope-bin
+Conflicts: chainscope-gui
+Replaces: chainscope-gui
+Filename: pool/main/c/chainscope/chainscope-cli_1.1.0-1_amd64.deb
+Size: 787936
+MD5sum: 0110bbeb490eb859635fcecf54695173
+SHA1: 6d3ffea0449e63964415a4b2af3fa7e233025c82
+SHA256: 6909774b41686fcca54a4e32e4b5e981456fd3bc31102e58697d8cac2763c940
+SHA512: e8c509eefa1f7d64b15515a8eadeb786b801e4fbe9f400d378c7d67e758d40cda19f854540d5dcc44c7c7dee4682c3212a6a1f449ca4393bc449d413dfe80de5
+Homepage: https://github.com/OpenRefactory-Inc/chainscope
+Description: Call-graph chain explorer for *_cg.json call graphs
+ chainscope loads per-artifact, source-level static call graphs (*_cg.json),
+ lets you pick a source and a sink function, and finds every call chain between
+ them. Chains can be stitched across several graphs through stub-to-definition
+ bridges, so a route from an application into its dependencies shows up end to
+ end. Subcommands cover reachability verdicts, chokepoints, dependency surfaces,
+ graph diffs and a JSON-spec CI gate.
+ .
+ This package ships a fully static build with the GUI compiled out, so it has
+ no dependencies and suits servers, containers, CI gates and minimal images.
+ For the desktop application install chainscope-gui instead: the two provide the
+ same /usr/bin/chainscope and cannot be installed together.
+
+Package: chainscope-gui
+Architecture: amd64
+Version: 1.1.0-1
+Priority: optional
+Section: devel
+Maintainer: OpenRefactory, Inc. <tanin@openrefactory.com>
+Installed-Size: 17580
+Provides: chainscope-bin
+Depends: libc6 (>= 2.17), libx11-6, libx11-xcb1, libxcursor1, libxrandr2, libxi6, libxkbcommon0, libxkbcommon-x11-0, libwayland-client0, libwayland-cursor0, libwayland-egl1, libgl1, libegl1
+Conflicts: chainscope-cli
+Replaces: chainscope-cli
+Filename: pool/main/c/chainscope/chainscope-gui_1.1.0-1_amd64.deb
+Size: 5169332
+MD5sum: f5ada9ca0d66c4c11bee9ee1f390ec79
+SHA1: eb6519356ccc29f58ee6a3058d40b7dbd7d602a3
+SHA256: 4201d152b84abd23bef5e6b95358b85ff42151cda1324aa8d9105fc94a763e7c
+SHA512: 24e8e619d23709a77920a4cbab55474b30b0e1750b3f35865669a339e89466ee770f83a63809ffaba1c43a9a358dcbb1634caf8d8dcd6efd1c6d72bc4531d9c1
+Homepage: https://github.com/OpenRefactory-Inc/chainscope
+Description: Call-graph chain explorer for *_cg.json call graphs
+ chainscope loads per-artifact, source-level static call graphs (*_cg.json),
+ lets you pick a source and a sink function, and finds every call chain between
+ them. Chains can be stitched across several graphs through stub-to-definition
+ bridges, so a route from an application into its dependencies shows up end to
+ end. Subcommands cover reachability verdicts, chokepoints, dependency surfaces,
+ graph diffs and a JSON-spec CI gate.
+ .
+ This package ships the build with the graphical explorer compiled in, plus a
+ desktop entry and icon. It is dynamically linked against a glibc 2.17 floor,
+ so it runs across distributions. For servers and containers install
+ chainscope-cli instead: the two provide the same /usr/bin/chainscope and cannot be
+ installed together.
+
+Package: chainscope
+Architecture: all
+Version: 1.1.0-1
+Priority: optional
+Section: devel
+Maintainer: OpenRefactory, Inc. <tanin@openrefactory.com>
+Installed-Size: 32
+Depends: chainscope-cli (= 1.1.0-1) | chainscope-gui (= 1.1.0-1)
+Filename: pool/main/c/chainscope/chainscope_1.1.0-1_all.deb
+Size: 2056
+MD5sum: 9e5567986dddec607a24e04ee8e1e1c1
+SHA1: 9a7ef8f70e8516dca7284c3863b2329e7c5efcbd
+SHA256: d446bc7db8ae0e9a6acd9560ef80224e2a063feef72de67c260afe4a35f9c244
+SHA512: 2818ca3a5370482c8b178b0485910cb801a3317ad901e6d45aefe04497ae24b8304634951792eb8ad6bf86bc6d0b2de70608e8b72321f8db785b4f2dfba368cc
+Homepage: https://github.com/OpenRefactory-Inc/chainscope
+Description: Call-graph chain explorer for *_cg.json call graphs
+ chainscope loads per-artifact, source-level static call graphs (*_cg.json),
+ lets you pick a source and a sink function, and finds every call chain between
+ them. Chains can be stitched across several graphs through stub-to-definition
+ bridges, so a route from an application into its dependencies shows up end to
+ end. Subcommands cover reachability verdicts, chokepoints, dependency surfaces,
+ graph diffs and a JSON-spec CI gate.
+ .
+ This is a metapackage. It installs chainscope-cli (the dependency-free static
+ build) by default, and is equally satisfied by an existing chainscope-gui
+ install. Install chainscope-gui directly if you want the desktop application.
+
